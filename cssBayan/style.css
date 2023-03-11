@@ -20,9 +20,25 @@ body {
 }
 
 .all-memes-container {
+    color: blue;
+
     max-width: 500px;
     /* height: 100rem; */
     margin: 20px auto;
+
+    font-family: 'Tilt Warp';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.all-memes-container:hover .meme-title {
+    color: black;
+}
+
+.h1-text {
+    color: black;
 }
 
 .meme-item {
@@ -34,14 +50,23 @@ body {
     display: block; /*нужно прописывать, т.к. лэйбл строчный элемент*/
     padding: 10px 15px;
     cursor: pointer;
-    color: blue;
 
     transition: color .3s;
 }
 
-.meme-title:hover {
-    color: black;
+ .meme-item:hover .picture-display {
+    display: block;
+    animation: shows 1s;
 }
+
+@keyframes shows {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 
 .meme-input {
     /* следующие пять строчек нужны для скрытия радио кнопки на всех уровнях */
@@ -56,28 +81,27 @@ body {
 
 .meme-input:checked + .picture-display {
     display: block;
+
 }
 
 .picture-display {
+    /* scale: 0.7; */
     display: none;
     padding-bottom: 20px;
 }
 
 .meme-picture {
+    transition: 1s;
+    /* transform: scale(0.7); */
+
     display: flex;
     justify-content: center;
 }
 
+.picture {
+    transition: 1s;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
+.cross {
+}
