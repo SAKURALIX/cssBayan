@@ -13,13 +13,13 @@ body {
 
 .background {
     max-width: 100%;
-    height: 100rem;
+    min-height: 50rem;
     /* margin: 20px auto; */
     padding: 20px;
     background-color: rgb(241, 229, 214);
 }
 
-.all-memes-container {
+.memes-and-title-container {
     color: blue;
 
     max-width: 500px;
@@ -37,6 +37,11 @@ body {
     color: black;
 }
 
+.all-memes-container:hover .arrow {
+    display: block;
+    animation: shows 1s;
+}
+
 .h1-text {
     color: black;
 }
@@ -44,6 +49,24 @@ body {
 .meme-item {
     border-top: 1px solid rgb(177, 173, 173);
     /* border-bottom: 1px solid rgb(177, 173, 173); */
+}
+
+.all-memes-container {
+
+    max-width: 700px;
+}
+
+
+/* .all-memes-container div:first-child {
+    border-top: 10px solid rgb(177, 173, 173);
+} */
+
+.title-and-arrow {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center;
+    justify-content: space-between; */
+    /* transform: translateY(-50%); */
 }
 
 .meme-title {
@@ -59,6 +82,12 @@ body {
     animation: shows 1s;
 }
 
+.meme-item:hover .arrow {
+    transform: rotate(360deg);
+    animation: infinite-spinning 0.5s;
+}
+
+
 @keyframes shows {
         from {
             opacity: 0;
@@ -66,7 +95,30 @@ body {
         to {
             opacity: 1;
         }
+}
+
+@keyframes infinite-spinning {
+    from {
+      transform: rotate(0deg);
     }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.arrow {
+    display: none;
+
+    margin: 15px 15px;
+    width: 15px;
+    height: 15px;
+
+    border-style: solid;
+    border-width: 0 7.5px 12px 7.5px;
+    border-color: transparent transparent #000000 transparent;
+
+    transform: rotate(180deg);
+}
 
 .meme-input {
     /* следующие пять строчек нужны для скрытия радио кнопки на всех уровнях */
@@ -81,8 +133,14 @@ body {
 
 .meme-input:checked + .picture-display {
     display: block;
+    color: blue;
 
 }
+
+.meme-input:checked + .meme-title {
+    color: blue;
+}
+
 
 .picture-display {
     /* scale: 0.7; */
@@ -102,6 +160,15 @@ body {
     transition: 1s;
 }
 
+@media screen and (max-width: 768px) {
 
-.cross {
+    .header {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .burger {
+        font-size: 12px;
+    }
 }
