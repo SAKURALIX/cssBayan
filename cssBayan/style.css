@@ -14,5 +14,70 @@ body {
 .background {
     max-width: 100%;
     height: 100rem;
-    background-color: burlywood;
+    /* margin: 20px auto; */
+    padding: 20px;
+    background-color: rgb(241, 229, 214);
 }
+
+.all-memes-container {
+    max-width: 500px;
+    /* height: 100rem; */
+    margin: 20px auto;
+}
+
+.meme-item {
+    border-top: 1px solid rgb(177, 173, 173);
+    /* border-bottom: 1px solid rgb(177, 173, 173); */
+}
+
+.meme-title {
+    display: block; /*нужно прописывать, т.к. лэйбл строчный элемент*/
+    padding: 10px 15px;
+    cursor: pointer;
+    color: blue;
+
+    transition: color .3s;
+}
+
+.meme-title:hover {
+    color: black;
+}
+
+.meme-input {
+    /* следующие пять строчек нужны для скрытия радио кнопки на всех уровнях */
+    width: 0;
+    height: 0;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    position: absolute;
+}
+
+.meme-input:checked + .picture-display {
+    display: block;
+}
+
+.picture-display {
+    display: none;
+    padding-bottom: 20px;
+}
+
+.meme-picture {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
