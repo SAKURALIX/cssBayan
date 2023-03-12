@@ -3,28 +3,33 @@ html {
     box-sizing: border-box;
 }
 
-*, *::after, *::before{
-    box-sizing: inherit;
-}
-
 body {
-    margin: 0px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    margin: 0;
 }
 
 .background {
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
     max-width: 100%;
     min-height: 50rem;
-    /* margin: 20px auto; */
-    padding: 20px;
+    padding: 0.1%;
     background-color: rgb(241, 229, 214);
 }
 
 .memes-and-title-container {
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
     color: blue;
 
-    max-width: 500px;
-    /* height: 100rem; */
-    margin: 20px auto;
+    max-width: 100%;
 
     font-family: 'Tilt Warp';
     font-style: normal;
@@ -43,35 +48,46 @@ body {
 }
 
 .h1-text {
+    margin-left: 5%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
     color: black;
 }
 
 .meme-item {
+    max-width: 100%;
+
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
     border-top: 1px solid rgb(177, 173, 173);
-    /* border-bottom: 1px solid rgb(177, 173, 173); */
 }
 
 .all-memes-container {
+    flex-wrap: wrap;
+    box-sizing: border-box;
 
-    max-width: 700px;
+    max-width: 100%;
 }
 
-
-/* .all-memes-container div:first-child {
-    border-top: 10px solid rgb(177, 173, 173);
-} */
-
 .title-and-arrow {
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center;
-    justify-content: space-between; */
-    /* transform: translateY(-50%); */
+    max-width: 100%;
+
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .meme-title {
-    display: block; /*нужно прописывать, т.к. лэйбл строчный элемент*/
-    padding: 10px 15px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    display: grid; /*нужно прописывать, т.к. лэйбл строчный элемент*/
+    grid-template-columns: 63% 27% 10%;
+    grid-template-rows: 10% 90%;
+    justify-items: start;
+
     cursor: pointer;
 
     transition: color .3s;
@@ -106,12 +122,19 @@ body {
     }
 }
 
+.title-text {
+    max-width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 4%;
+}
+
 .arrow {
     display: none;
 
-    margin: 15px 15px;
-    width: 15px;
-    height: 15px;
+    margin: 40% 40%;
 
     border-style: solid;
     border-width: 0 7.5px 12px 7.5px;
@@ -121,6 +144,10 @@ body {
 }
 
 .meme-input {
+    max-width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
     /* следующие пять строчек нужны для скрытия радио кнопки на всех уровнях */
     width: 0;
     height: 0;
@@ -132,9 +159,9 @@ body {
 }
 
 .meme-input:checked + .picture-display {
-    display: block;
+    display: flex;
     color: blue;
-
+    justify-content: center;
 }
 
 .meme-input:checked + .meme-title {
@@ -143,32 +170,54 @@ body {
 
 
 .picture-display {
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
     /* scale: 0.7; */
     display: none;
-    padding-bottom: 20px;
+    max-width: 100%;
+    padding-bottom: 4%;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .meme-picture {
+    max-width: 100%;
+
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
     transition: 1s;
-    /* transform: scale(0.7); */
 
     display: flex;
     justify-content: center;
 }
 
 .picture {
+    max-width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
     transition: 1s;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
 
-    .header {
+    .memes-and-title-container {
         font-size: 14px;
     }
 }
 
+@media screen and (max-width: 470px) {
+
+    .picture-display {
+        padding-bottom: 0;
+    }
+}
+
 @media screen and (max-width: 320px) {
-    .burger {
-        font-size: 12px;
+    .memes-and-title-container {
+        font-size: 10px;
     }
 }
