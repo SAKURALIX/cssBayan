@@ -27,7 +27,6 @@ body {
     flex-wrap: wrap;
     box-sizing: border-box;
 
-    color: blue;
 
     max-width: 100%;
 
@@ -36,15 +35,6 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
-}
-
-.all-memes-container:hover .meme-title {
-    color: black;
-}
-
-.all-memes-container:hover .arrow {
-    display: block;
-    animation: shows 1s;
 }
 
 .h1-text {
@@ -65,6 +55,8 @@ body {
 }
 
 .all-memes-container {
+    color: blue;
+
     flex-wrap: wrap;
     box-sizing: border-box;
 
@@ -92,17 +84,6 @@ body {
 
     transition: color .3s;
 }
-
- .meme-item:hover .picture-display {
-    display: block;
-    animation: shows 1s;
-}
-
-.meme-item:hover .arrow {
-    transform: rotate(360deg);
-    animation: infinite-spinning 0.5s;
-}
-
 
 @keyframes shows {
         from {
@@ -160,12 +141,12 @@ body {
 
 .meme-input:checked + .picture-display {
     display: flex;
-    color: blue;
-    justify-content: center;
 }
 
-.meme-input:checked + .meme-title {
-    color: blue;
+/* all-memes-container */
+
+.meme-input:checked + .title-text {
+    color: black;
 }
 
 
@@ -202,8 +183,33 @@ body {
     transition: 1s;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (min-width: 830px) {
+    .all-memes-container:hover {
+        color: black;
+    }
+    
+    .all-memes-container:hover .arrow {
+        display: block;
+        animation: shows 1s;
+    }
+    .meme-item:hover .picture-display {
+        display: block;
+        animation: shows 1s;
+    }
+    
+    .meme-item:hover .arrow {
+        transform: rotate(360deg);
+        animation: infinite-spinning 0.5s;
+    }
+    
+    
+}
 
+@media screen and (max-width: 820px) {
+    /* .meme-title {
+        pointer-events: none;
+    } */
+    
     .memes-and-title-container {
         font-size: 14px;
     }
