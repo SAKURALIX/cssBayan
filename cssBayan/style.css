@@ -123,8 +123,8 @@ body {
     }
     99% {
       opacity: 0;
-      height: 200rem;
-      width: 200rem;
+      /* height: 200rem;
+      width: 200rem; */
     }
     100% {
       opacity: 0;
@@ -177,37 +177,12 @@ body {
     position: absolute;
 }
 
-.meme-input:checked ~ .picture-display {
-    transition: 1s;
-
-    display: flex;
-    animation: shows 1s;
-}
-
 /* all-memes-container */
 
 .meme-input:checked ~ .title-text {
     transition: 1s;
 
     color: black;
-}
-
-
-.picture-display {
-    transition: 1s;
-    /* animation: shows 1s; */
-    animation: from-top 1s;
-
-    flex-wrap: wrap;
-    box-sizing: border-box;
-
-    /* scale: 0.7; */
-    display: none;
-    max-width: 100%;
-    padding-bottom: 4%;
-
-    grid-column-start: 1;
-    grid-column-end: 4;
 }
 
 .meme-picture {
@@ -217,7 +192,7 @@ body {
     box-sizing: border-box;
 
     transition: 1s;
-    animation: shows 1s;
+    /* animation: shows 1s; */
 
     display: flex;
     justify-content: center;
@@ -229,7 +204,44 @@ body {
     box-sizing: border-box;
 
     transition: 1s;
-    animation: shows 1s;
+    /* animation: shows 1s; */
+    /* animation: from-top 2s; */
+}
+
+.picture-display {
+    transition: all 1s ease-in;
+    transition: all 1s ease-out;
+    /* animation: shows 1s; */
+    /* animation: from-top 1s; */
+    /* display: none; */
+
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    /* scale: 0.7; */
+    max-width: 0%;
+    padding-bottom: 4%;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+
+.meme-input:checked ~ .picture-display {
+    /* transition: 1s; */
+    max-width: 100%;
+    display: flex;
+    /* animation: shows 4s; */
+    /* animation: from-top 4s; */
+}
+/* .meme-input:checked ~ .picture {
+    max-width: 100%;
+} */
+
+/* :not(:checked) */
+.meme-input:not(:checked) ~ .picture-display {
+    transition: 1s;
+
+    /* animation: from-top 4s; */
 }
 
 @media screen and (min-width: 830px) {
@@ -245,11 +257,16 @@ body {
         animation: shows 1s;
     }
     .meme-item:hover .picture-display {
-        transition: 1s;
-
+        /* transition: all 1s ease-in;
+        transition: all 1s ease-out; */
+        /* animation: from-top 2s; */
+        max-width: 100%;
         display: block;
-        animation: shows 1s;
+        /* animation: shows 1s; */
     }
+    /* .meme-item:hover .picture {
+        max-width: 100%;
+    }     */
 
     .meme-item:hover .title-text {
         transition: 1s;
