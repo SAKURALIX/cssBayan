@@ -151,7 +151,7 @@ body {
 
     display: none;
 
-    margin: 40% 40%;
+    margin: 30% 30%;
 
     border-style: solid;
     border-width: 0 0.5rem 0.9rem 0.5rem;
@@ -177,7 +177,7 @@ body {
     position: absolute;
 }
 
-.meme-input:checked + .picture-display {
+.meme-input:checked ~ .picture-display {
     transition: 1s;
 
     display: flex;
@@ -186,7 +186,7 @@ body {
 
 /* all-memes-container */
 
-.meme-input:checked + .title-text {
+.meme-input:checked ~ .title-text {
     transition: 1s;
 
     color: black;
