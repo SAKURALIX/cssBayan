@@ -87,8 +87,6 @@ body {
     grid-template-rows: 10% 90%;
     justify-items: start;
 
-    cursor: pointer;
-
     transition: color .3s;
 }
 
@@ -174,7 +172,7 @@ body {
     -webkit-appearance: none;
     appearance: none;
 
-    position: absolute;
+    display: none;
 }
 
 /* all-memes-container */
@@ -244,7 +242,14 @@ body {
     /* animation: from-top 4s; */
 }
 
-@media screen and (min-width: 830px) {
+@media (hover: hover) {
+
+/* @media screen and (min-width: 830px) { */
+    .meme-title {
+        cursor: pointer;
+    }
+    
+
     .all-memes-container:hover .title-text{
         transition: 1s;
 
